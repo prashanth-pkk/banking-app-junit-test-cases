@@ -13,15 +13,11 @@ import java.time.LocalDateTime;
 public class AccountService {
 
     @Autowired
-    private final AccountRepository accountRepository;
+    private AccountRepository accountRepository;
 
     @Autowired
-    private final TransactionRepository transactionRepository;
+    private TransactionRepository transactionRepository;
 
-    public AccountService(AccountRepository accountRepository, TransactionRepository transactionRepository) {
-        this.accountRepository = accountRepository;
-        this.transactionRepository = transactionRepository;
-    }
 
     public Account deposit(String accountNumber, double amount) {
         Account account = accountRepository.findByAccountNumber(accountNumber);
